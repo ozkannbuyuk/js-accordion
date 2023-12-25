@@ -1,0 +1,46 @@
+:root {
+  --active-color: #F9A825;
+  --acc-color: #FDD835;
+  --content-color: #E8F0F2;
+}
+
+body {
+  background-color: #111;
+  font-family: helvetica;
+}
+
+.accordion {
+  background-color: var(--acc-color);
+  padding: 15px;
+  cursor: pointer;
+}
+
+.accordion:hover {
+  background-color: var(--active-color);
+}
+
+.accordion::before {
+  content: "+";
+  position: absolute;
+  right: 20px;
+}
+
+.content {
+  background-color: var(--content-color);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height .5s;
+}
+
+.content p {
+  margin: 0;
+  padding: 15px;
+}
+
+.active {
+  background-color: var(--active-color);
+}
+
+.accordion.active::before {
+  content: "-";
+}
